@@ -68,6 +68,7 @@ export default function Home() {
                                         </div>
                                     </div>
 
+
                                     <div className="mt-4 rounded-2xl bg-white p-4 border border-slate-200">
                                         <p className="text-sm text-slate-900 font-semibold">Checklist</p>
                                         <ul className="mt-2 text-sm text-slate-700 space-y-1 list-disc list-inside">
