@@ -30,7 +30,7 @@ public class PersonasEntity {
     ){
         this.id = id;
         this.nombre = nombre;
-        this.email = nombre;
+        this.email = email;
     }
 
     public Long getId() {
