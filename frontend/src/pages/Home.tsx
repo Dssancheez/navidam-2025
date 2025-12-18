@@ -33,10 +33,10 @@ export default function Home() {
                                     <Boton texto="👥 Gestionar personas"
                                             color='#000000'/>
 
-
                                     <Boton
                                         texto="🚀 Crear postal"
-                                        color="#ff0000"    />
+                                        color="#ff0000"   
+                                        />
 
                                 </div>
 
