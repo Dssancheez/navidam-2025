@@ -17,17 +17,17 @@ public class ModeloPlantillaPrueba {
     public ModeloPlantillaPrueba() {
     }
 
-    public ModeloPlantillaPrueba(String destinatario, String remitente, String mensaje, String melodia, String fechaCreacion) {
+    public ModeloPlantillaPrueba(String destinatario, String remitente, String mensaje, String melodia, LocalDateTime fechaCreacion) {
         this.destinatario = destinatario;
         this.remitente = remitente;
         this.mensaje = mensaje;
         this.melodia = melodia;
-        this.fecha = (fechaCreacion != null) ? fechaCreacion.format(FMT) : "";
+        this.fecha = (fechaCreacion != null) ? LocalDateTime.now().format(FMT) : "";
     }
 
     // ---------- Builder cómodo (opcional, pero útil) ----------
     public static ModeloPlantillaPrueba of(String destinatario, String remitente, String mensaje, String melodia) {
-        return new ModeloPlantillaPrueba(destinatario, remitente, mensaje, melodia, LocalDateTime.now().format(FMT));
+        return new ModeloPlantillaPrueba(destinatario, remitente, mensaje, melodia, LocalDateTime.now());
     }
 
     // ---------- Getters / Setters ----------

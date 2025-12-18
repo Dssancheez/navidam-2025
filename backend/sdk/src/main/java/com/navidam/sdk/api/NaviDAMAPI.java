@@ -1,10 +1,12 @@
 package com.navidam.sdk.api;
 
-import com.navidam.sdk.api.melodia.Melodia1;
+import java.util.List;
+import com.navidam.sdk.api.melodia.MelodiaFelizCumple;
+import com.navidam.sdk.api.melodia.MelodiaMerryChristmas;
+import com.navidam.sdk.api.melodia.MelodiaNavideña;
+import com.navidam.sdk.api.melodia.MelodiaNocheDePaz;
 import com.navidam.sdk.internal.html.Plantilla;
 import com.navidam.sdk.internal.melodia.Melodia;
-
-import java.util.List;
 
 public class NaviDAMAPI {
 
@@ -19,13 +21,17 @@ public class NaviDAMAPI {
 
     public List<Melodia> listadoMelodias() {
         return List.of(
-                Melodia1.crear()
+        		MelodiaFelizCumple.crear(),
+        		MelodiaMerryChristmas.crear(),
+        		MelodiaNavideña.crear(),
+        	    MelodiaNocheDePaz.crear()
         );
     }
 
     public List<Plantilla> listadoPlantillas() {
         return List.of(
                   new Plantilla("Plantilla 2").path("plantillaDos.html")
+                 new Plantilla("Plantilla 1").path("plantilla.html")
         );
     }
 

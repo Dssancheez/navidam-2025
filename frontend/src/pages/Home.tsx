@@ -1,11 +1,12 @@
 import Header from "@/Componentes/Header.tsx";
+import Boton from "@/Componentes/Boton.tsx";
+import Tarjetas from "@/Componentes/Tarjetas.tsx";
 
-export default function Index() {
-
+export default function Home() {
     return (
         <>
+            <Header />
 
-            <Header/>
 
             <main className="max-w-6xl mx-auto px-4 py-10">
                 <div className="rounded-[2rem] bg-white text-slate-900 shadow-2xl ring-1 ring-black/5 overflow-hidden">
@@ -20,7 +21,7 @@ export default function Index() {
 
                                 <h1 className="text-4xl lg:text-5xl font-black tracking-tight leading-tight">
                                     Postales navideñas <span className="text-red-600">personalizadas</span> y con <span
-                                    className="text-slate-900">música 🎶</span>
+                                        className="text-slate-900">música 🎶</span>
                                 </h1>
 
                                 <p className="text-slate-600 text-lg leading-relaxed">
@@ -28,33 +29,26 @@ export default function Index() {
                                     y genera una postal lista para enviar o publicar.
                                 </p>
 
+
                                 <div className="flex flex-wrap gap-3 pt-2">
-                                    <a href="personas.html"
-                                       className="inline-flex items-center gap-2 px-4 py-3 rounded-2xl bg-slate-900 text-white hover:bg-slate-800 font-semibold">
-                                        👥 Gestionar personas
-                                    </a>
-                                    <a href="postal.html"
-                                       className="inline-flex items-center gap-2 px-4 py-3 rounded-2xl bg-red-600 hover:bg-red-700 text-white font-extrabold">
-                                        🚀 Crear postal
-                                    </a>
+                                    <Boton texto="👥 Gestionar personas"
+                                            color='#000000'
+                                            />
+
+                                    <Boton
+                                        texto="🚀 Crear postal"
+                                        color="#ff0000"
+                                        onClick={() => window.location.href = "/postales"} />
+
+
+
                                 </div>
 
                                 <div className="grid sm:grid-cols-3 gap-3 pt-4">
-                                    <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                                        <p className="text-sm text-slate-600">Plantillas</p>
-                                        <p className="text-2xl font-bold">🎨</p>
-                                        <p className="text-xs text-slate-500">HTML/Thymeleaf</p>
-                                    </div>
-                                    <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                                        <p className="text-sm text-slate-600">Melodías</p>
-                                        <p className="text-2xl font-bold">🎶</p>
-                                        <p className="text-xs text-slate-500">MIDI</p>
-                                    </div>
-                                    <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                                        <p className="text-sm text-slate-600">Orquestación</p>
-                                        <p className="text-2xl font-bold">⚡</p>
-                                        <p className="text-xs text-slate-500">n8n</p>
-                                    </div>
+                                    <Tarjetas texto="Plantillas" subtitulo="HTML/Thymeleaf" emoji="🚀" />
+                                    <Tarjetas texto="Plantillas" subtitulo="HTML/Thymeleaf" emoji="🎶" />
+                                    <Tarjetas texto="Plantillas" subtitulo="HTML/Thymeleaf" emoji="⚡" />
+
                                 </div>
                             </div>
 
@@ -73,9 +67,11 @@ export default function Index() {
                                             plantilla]</p>
                                         <div className="mt-4 flex flex-wrap gap-2">
                                             <span className="text-xs bg-slate-100 rounded-full px-3 py-1">Plantilla: [Nombre]</span>
-                                            <span className="text-xs bg-slate-100 rounded-full px-3 py-1">Melodía: [Título]</span>
+                                            <span
+                                                className="text-xs bg-slate-100 rounded-full px-3 py-1">Melodía: [Título]</span>
                                         </div>
                                     </div>
+
 
                                     <div className="mt-4 rounded-2xl bg-white p-4 border border-slate-200">
                                         <p className="text-sm text-slate-900 font-semibold">Checklist</p>
@@ -96,9 +92,9 @@ export default function Index() {
                         </div>
                     </div>
                 </div>
-            </main>
-
+            </main >
 
         </>
+
     )
 }

@@ -4,4 +4,6 @@ public record PersonasResponse(
         Long id,
         String nombre,
         String email
-){}
+){
+
+   }
