@@ -18,12 +18,14 @@ export default function Header() {
                 </Link>
 
                 <nav className="flex items-center gap-2">
+                    <Link to={"/personas"}>
                     <Boton
                         texto="personas"
                         color='#0000'
                         colorBorde='#000000'
 
                     />
+                    </Link>
                     <Boton
                         texto="Alta"
                         color='#0000'
