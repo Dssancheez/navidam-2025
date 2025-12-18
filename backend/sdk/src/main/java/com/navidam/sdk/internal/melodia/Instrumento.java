@@ -162,7 +162,7 @@ public enum Instrumento {
     TELEFONO(124, "Teléfono"),
     HELICOPTERO(125, "Helicóptero"),
     APLAUSOS(126, "Aplausos"),
-    DISPARO(127, "Disparo");
+    DISPARO(127, "Disparo"),;
 
     private final int program;
     private final String nombre;
