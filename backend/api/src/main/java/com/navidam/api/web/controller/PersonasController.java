@@ -17,7 +17,7 @@ import com.navidam.api.dto.request.PersonasRequest;
 import com.navidam.api.dto.response.PersonasResponse;
 import com.navidam.api.service.PersonasService;
 
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 public class PersonasController {
     
@@ -36,13 +36,13 @@ public class PersonasController {
 
     @DeleteMapping("/personas/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deletePersonas(Long id){
+    public void deletePersonas(@PathVariable Long id){
         this.personasService.deletePersonas(id);
     }
 
     @PostMapping("/personas")
     @ResponseStatus(HttpStatus.CREATED)
-    public PersonasResponse createPersonas(PersonasRequest request){
+    public PersonasResponse createPersonas(@RequestBody PersonasRequest request){
         return this.personasService.createPersonas(request);
     }
 }
