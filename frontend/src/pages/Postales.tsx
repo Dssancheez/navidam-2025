@@ -1,9 +1,9 @@
 import Boton from "@/Componentes/Boton";
 import Footer from "@/Componentes/Footer";
 import Header from "@/Componentes/Header";
-import { useEffect, useState } from "react";
+import { useState, type ChangeEvent } from "react";
 
-export type Postales = {
+export type PostalesForm = {
     destinatario: string;
     plantilla: string;
     melodia: string;
@@ -11,26 +11,57 @@ export type Postales = {
     campo2: string;
 }
 
+const defaultPostalesForm: PostalesForm = {
+    destinatario: "",
+    plantilla: "",
+    melodia: "",
+    campo1: "",
+    campo2: "",
+}
+
 export default function Postales() {
 
-    const [postales, setPostales] = useState<Postales>();
+    const [form, setForm] = useState<PostalesForm>(defaultPostalesForm);
 
-    useEffect(() => {
-        const loadPostal = async () => {
-            const postalesResponse = await listPostales();
-            const result: Postales[] = postalesResponse.map(a => {
-                return {
-                    destinatario: a.destinatario,
-                    plantilla: a.plantilla,
-                    melodia: a.melodia,
-                    campo1: a.campo1,
-                    campo2: a.campo2
-                }
-            })
-            setPostales(result);
-        }
-        loadPostal();
-    }, [])
+    const handleDestinatarioOnChange = (evt: ChangeEvent<HTMLSelectElement>) => {
+        const {value} = evt.target;
+        setForm({
+            ...form,
+            destinatario:value
+        })
+    }
+
+    const handlePlantillaOnChange = (evt: ChangeEvent<HTMLSelectElement>) => {
+        const {value} = evt.target;
+        setForm({
+            ...form,
+            plantilla:value
+        })
+    }
+
+    const handleMelodiaOnChange = (evt: ChangeEvent<HTMLSelectElement>) => {
+        const {value} = evt.target;
+        setForm({
+            ...form,
+            melodia:value
+        })
+    }
+
+    const handleCampo1OnChange = (evt: ChangeEvent<HTMLInputElement>) => {
+        const {value} = evt.target;
+        setForm({
+            ...form,
+            campo1:value
+        })
+    }
+
+    const handleCampo2OnChange = (evt: ChangeEvent<HTMLTextAreaElement>) => {
+        const {value} = evt.target;
+        setForm({
+            ...form,
+            campo2:value
+        })
+    }
 
     return (
         <>
@@ -53,7 +84,7 @@ export default function Postales() {
                                 <div className="grid md:grid-cols-2 gap-4">
                                     <div className="md:col-span-2">
                                         <label className="text-sm text-slate-700">Destinatario</label>
-                                        <select className="mt-1 w-full px-4 py-3 rounded-2xl bg-white border border-slate-200 outline-none focus:ring-2 focus:ring-red-300">
+                                        <select value={form.destinatario} onChange={handleDestinatarioOnChange} className="mt-1 w-full px-4 py-3 rounded-2xl bg-white border border-slate-200 outline-none focus:ring-2 focus:ring-red-300">
                                             <option>[React: listado de personas]</option>
                                         </select>
                                         <p className="mt-2 text-xs text-slate-500">
@@ -63,14 +94,14 @@ export default function Postales() {
 
                                     <div>
                                         <label className="text-sm text-slate-700">Plantilla</label>
-                                        <select className="mt-1 w-full px-4 py-3 rounded-2xl bg-white border border-slate-200 outline-none focus:ring-2 focus:ring-red-300">
+                                        <select value={form.plantilla} onChange={handlePlantillaOnChange} className="mt-1 w-full px-4 py-3 rounded-2xl bg-white border border-slate-200 outline-none focus:ring-2 focus:ring-red-300">
                                             <option>[React: listado de plantillas]</option>
                                         </select>
                                     </div>
 
                                     <div>
                                         <label className="text-sm text-slate-700">Melodía</label>
-                                        <select className="mt-1 w-full px-4 py-3 rounded-2xl bg-white border border-slate-200 outline-none focus:ring-2 focus:ring-red-300">
+                                        <select value={form.melodia} onChange={handleMelodiaOnChange} className="mt-1 w-full px-4 py-3 rounded-2xl bg-white border border-slate-200 outline-none focus:ring-2 focus:ring-red-300">
                                             <option>[React: listado de melodías]</option>
                                         </select>
                                     </div>
@@ -84,11 +115,11 @@ export default function Postales() {
                                 <div className="grid gap-4">
                                     <div>
                                         <label className="text-sm text-slate-700">[Campo requerido 1]</label>
-                                        <input className="mt-1 w-full px-4 py-3 rounded-2xl bg-white border border-slate-200 outline-none focus:ring-2 focus:ring-red-300" placeholder="..." />
+                                        <input value={form.campo1} onChange={handleCampo1OnChange} className="mt-1 w-full px-4 py-3 rounded-2xl bg-white border border-slate-200 outline-none focus:ring-2 focus:ring-red-300" placeholder="..." />
                                     </div>
                                     <div>
                                         <label className="text-sm text-slate-700">[Campo requerido 2]</label>
-                                        <textarea rows={4} className="mt-1 w-full px-4 py-3 rounded-2xl bg-white border border-slate-200 outline-none focus:ring-2 focus:ring-red-300" placeholder="..."></textarea>
+                                        <textarea value={form.campo2} onChange={handleCampo2OnChange} rows={4} className="mt-1 w-full px-4 py-3 rounded-2xl bg-white border border-slate-200 outline-none focus:ring-2 focus:ring-red-300" placeholder="..."></textarea>
                                     </div>
                                 </div>
 

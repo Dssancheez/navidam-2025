@@ -1,7 +1,7 @@
 package com.navidam.api.dto.response;
 
 public record PersonasResponse(
-        String id,
+        Long id,
         String nombre,
         String email
 ){}
