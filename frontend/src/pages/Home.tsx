@@ -32,7 +32,7 @@ export default function Home() {
                                 <div className="flex flex-wrap gap-3 pt-2">
                                     <Boton texto="👥 Gestionar personas"
                                             color='#000000'
-                                            />
+                                           onClick={() => window.location.href = "/personas"} />
 
                                     <Boton
                                         texto="🚀 Crear postal"

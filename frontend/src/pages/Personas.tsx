@@ -17,26 +17,16 @@ export default function Personas(){
 
 
 const [usePersonas, setPersonas] = useState <mostrarPersonas[]>([]);
-const [, setErrorMsg] = useState<string>();
 
 
 useEffect(()=>{;
-        mostrarPersonas().then(response =>{
-            if(response.ok && response.data){
-                const personasObtenidas = response.data.map(a =>{
-                    return{
-                        id: a.id,
-                        nombre: a.nombre,
-                        email: a.email
-                    }
-                });
-                setPersonas(personasObtenidas);
-            }else if(!response.ok){
-                console.log(response.error);
-            }
-        }).catch((errorMsg:Error)=>{
-            setErrorMsg(errorMsg.message);
-        });
+       fetch("http://localhost:8080/personas",{
+           method: "GET",
+       })
+           .then((response) => response.json())
+           .then((res) =>{
+               setPersonas(res);
+           })
     }, []);
 
 
