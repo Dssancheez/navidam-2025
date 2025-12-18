@@ -22,7 +22,7 @@ public class ModeloPlantillaPrueba {
         this.remitente = remitente;
         this.mensaje = mensaje;
         this.melodia = melodia;
-        this.fecha = (fechaCreacion != null) ? fechaCreacion.format(FMT) : "";
+        this.fecha = (fechaCreacion != null) ? LocalDateTime.now().format(FMT) : "";
     }
 
     // ---------- Builder cómodo (opcional, pero útil) ----------
