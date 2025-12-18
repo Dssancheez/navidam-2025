@@ -36,13 +36,10 @@ export default function Home() {
 
                                     <Boton
                                         texto="🚀 Crear postal"
-<<<<<<< HEAD
                                         color="#ff0000"
-                                        onClick={() => window.location.href = "/postales"}/>
-=======
-                                        color="#ff0000"   
-                                        />
->>>>>>> 8122258b4347c3fa578a1f955abac350ecd5f206
+                                        onClick={() => window.location.href = "/postales"} />
+
+
 
                                 </div>
 

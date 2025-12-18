@@ -5,15 +5,10 @@ const baseURL :string="http://localhost:8080";
 
 export async function mostrarPersonas (id?:number, nombre?:string, email?: string):Promise<APIResult<Personas[]>>{
     let url = `${baseURL}/api/personas?`;
-    if(id){
-        url+=`tipo=${id}&`
-    }
-    if(nombre){
-        url+=`edadMin=${nombre}&`
-    }
-    if(email){
-        url+=`edadMax=${email}`
-    }
+    if (id) url += `id=${id}&`;
+    if (nombre) url += `nombre=${nombre}&`;
+    if (email) url += `email=${email}`;
+
     const response = await fetch(url ,{
         method:'GET',
         headers:{
