@@ -31,12 +31,14 @@ export default function Home() {
 
                                 <div className="flex flex-wrap gap-3 pt-2">
                                     <Boton texto="👥 Gestionar personas"
-                                            color='#000000'/>
+                                            color='#000000'
+                                            />
 
 
                                     <Boton
                                         texto="🚀 Crear postal"
-                                        color="#ff0000"    />
+                                        color="#ff0000"
+                                        onClick={() => window.location.href = "/postales"}/>
 
                                 </div>
 
