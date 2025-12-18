@@ -32,17 +32,13 @@ export default function Home() {
 
 
                                 <div className="flex flex-wrap gap-3 pt-2">
-                                    <Link to={"/personas"}>
-                                        <Boton texto="👥 Gestionar personas"
-                                            color='#000000' />
-                                    </Link>
+                                    <Boton texto="👥 Gestionar personas"
+                                        color='#000000' />
 
-                                    <Link to={"/postales"}>
-                                        <Boton
-                                            texto="🚀 Crear postal"
-                                            color="#ff0000"
-                                        />
-                                    </Link>
+                                    <Boton
+                                        texto="🚀 Crear postal"
+                                        color="#ff0000"
+                                    />
                                 </div>
 
                                 <div className="grid sm:grid-cols-3 gap-3 pt-4">
