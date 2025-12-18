@@ -1,11 +1,12 @@
 import Header from "@/Componentes/Header.tsx";
 import Boton from "@/Componentes/Boton.tsx";
 import Tarjetas from "@/Componentes/Tarjetas.tsx";
+import { Link } from "react-router-dom";
 
 export default function Home() {
     return (
         <>
-            <Header/>
+            <Header />
 
 
             <main className="max-w-6xl mx-auto px-4 py-10">
@@ -21,7 +22,7 @@ export default function Home() {
 
                                 <h1 className="text-4xl lg:text-5xl font-black tracking-tight leading-tight">
                                     Postales navideñas <span className="text-red-600">personalizadas</span> y con <span
-                                    className="text-slate-900">música 🎶</span>
+                                        className="text-slate-900">música 🎶</span>
                                 </h1>
 
                                 <p className="text-slate-600 text-lg leading-relaxed">
@@ -29,20 +30,24 @@ export default function Home() {
                                     y genera una postal lista para enviar o publicar.
                                 </p>
 
+
                                 <div className="flex flex-wrap gap-3 pt-2">
-                                    <Boton texto="👥 Gestionar personas"
-                                            color='#000000'/>
+                                    <Link to={"/personas"}>
+                                        <Boton texto="👥 Gestionar personas"
+                                            color='#000000' />
+                                    </Link>
 
-                                    <Boton
-                                        texto="🚀 Crear postal"
-                                        color="#ff0000"   
+                                    <Link to={"/postales"}>
+                                        <Boton
+                                            texto="🚀 Crear postal"
+                                            color="#ff0000"
                                         />
-
+                                    </Link>
                                 </div>
 
                                 <div className="grid sm:grid-cols-3 gap-3 pt-4">
-                                   <Tarjetas texto="Plantillas" subtitulo="HTML/Thymeleaf" emoji="🚀" />
-                                    <Tarjetas texto="Plantillas" subtitulo="HTML/Thymeleaf" emoji= "🎶"/>
+                                    <Tarjetas texto="Plantillas" subtitulo="HTML/Thymeleaf" emoji="🚀" />
+                                    <Tarjetas texto="Plantillas" subtitulo="HTML/Thymeleaf" emoji="🎶" />
                                     <Tarjetas texto="Plantillas" subtitulo="HTML/Thymeleaf" emoji="⚡" />
 
                                 </div>
@@ -88,7 +93,7 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-            </main>
+            </main >
 
         </>
 
