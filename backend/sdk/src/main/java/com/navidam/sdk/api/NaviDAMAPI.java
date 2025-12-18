@@ -30,7 +30,10 @@ public class NaviDAMAPI {
 
     public List<Plantilla> listadoPlantillas() {
         return List.of(
+                  new Plantilla("Plantilla 2").path("plantillaDos.html")
                  new Plantilla("Plantilla 1").path("plantilla.html")
         );
     }
+
 }
+::
