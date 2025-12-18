@@ -1,7 +1,6 @@
 import Header from "@/Componentes/Header.tsx";
 import Boton from "@/Componentes/Boton.tsx";
 import Tarjetas from "@/Componentes/Tarjetas.tsx";
-import { Link } from "react-router-dom";
 
 export default function Home() {
     return (
