@@ -85,7 +85,11 @@ export default function Postales() {
                                     <div className="md:col-span-2">
                                         <label className="text-sm text-slate-700">Destinatario</label>
                                         <select value={form.destinatario} onChange={handleDestinatarioOnChange} className="mt-1 w-full px-4 py-3 rounded-2xl bg-white border border-slate-200 outline-none focus:ring-2 focus:ring-red-300">
-                                            <option>[React: listado de personas]</option>
+                                            <option>Destinatario 1</option>
+                                            <option>Destinatario 2</option>
+                                            <option>Destinatario 3</option>
+                                            <option>Destinatario 4</option>
+                                            <option>Destinatario 5</option>
                                         </select>
                                         <p className="mt-2 text-xs text-slate-500">
                                             React mostrará aquí el nombre y email del destinatario seleccionado.
@@ -95,14 +99,20 @@ export default function Postales() {
                                     <div>
                                         <label className="text-sm text-slate-700">Plantilla</label>
                                         <select value={form.plantilla} onChange={handlePlantillaOnChange} className="mt-1 w-full px-4 py-3 rounded-2xl bg-white border border-slate-200 outline-none focus:ring-2 focus:ring-red-300">
-                                            <option>[React: listado de plantillas]</option>
+                                            <option>Plantilla roja</option>
+                                            <option>Plantilla azul</option>
+                                            <option>Plantilla verde</option>
+                                            <option>Plantilla amarilla</option>
                                         </select>
                                     </div>
 
                                     <div>
                                         <label className="text-sm text-slate-700">Melodía</label>
                                         <select value={form.melodia} onChange={handleMelodiaOnChange} className="mt-1 w-full px-4 py-3 rounded-2xl bg-white border border-slate-200 outline-none focus:ring-2 focus:ring-red-300">
-                                            <option>[React: listado de melodías]</option>
+                                            <option>Jingle Bells</option>
+                                            <option>Noche de paz</option>
+                                            <option>Feliz navidad</option>
+                                            <option>Mi burrito sabanero</option>
                                         </select>
                                     </div>
                                 </div>

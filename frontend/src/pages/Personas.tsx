@@ -22,7 +22,6 @@ const [, setErrorMsg] = useState<string>();
 
 useEffect(()=>{;
         mostrarPersonas().then(response =>{
-            if(response.ok && response.data){
                 const personasObtenidas = response.data.map(a =>{
                     return{
                         id: a.id,
@@ -31,9 +30,6 @@ useEffect(()=>{;
                     }
                 });
                 setPersonas(personasObtenidas);
-            }else if(!response.ok){
-                console.log(response.error);
-            }
         }).catch((errorMsg:Error)=>{
             setErrorMsg(errorMsg.message);
         });
